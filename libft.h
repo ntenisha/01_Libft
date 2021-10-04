@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isprint.c                                          :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ntenisha <ntenisha@student.21-schoo>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 19:23:41 by ntenisha          #+#    #+#             */
-/*   Updated: 2021/10/04 19:23:56 by ntenisha         ###   ########.fr       */
+/*   Created: 2021/10/04 19:29:52 by ntenisha          #+#    #+#             */
+/*   Updated: 2021/10/04 19:37:41 by ntenisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int	ft_isprint(char c)
-{
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
-}
+# include <unistd.h>
+
+#endif
