@@ -5,6 +5,7 @@ void*   ft_memmove(void* dest, const void *src, size_t count)
 	
 	de = (unsigned char *)dest;
 	sr = (unsigned char *)src;
-	
+	if (!de && !sr)
+		return (NULL);
 	
 }
