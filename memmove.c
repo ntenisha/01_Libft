@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void*   ft_memmove(void* dest, const void *src, size_t count)
+void  *ft_memmove(void* dest, const void *src, size_t count)
 {
 	unsigned char *de;
 	unsigned char *sr;
@@ -21,24 +21,27 @@ void*   ft_memmove(void* dest, const void *src, size_t count)
 	sr = (unsigned char *)src;
 	if (!de && !sr)
 		return (NULL);
-	while (count > 0)
+	if  (de < sr)
 	{
-		*de = *sr;
-		count--;
-		*sr++;
-		*de++;
+	    while (count > 0)
+	    {
+		    *de = *sr;
+		    count--;
+		    *sr++;
+		    *de++;
+	    }
+	}
+	else
+	{
+	    de = de + count;
+	    sr = de + count;
+	    while (count > 0)
+	    {
+		    *de = *sr;
+		    count--;
+		    *sr--;
+		    *de--;
+	    }
 	}
 	return (dest);
-}
-
-#include <stdio.h>
-#include <string.h>
-
-int main(void)
-{
-char str1[40], str2[40];
-strcpy(str1, "Born to code in C/C++.");
-memmove(str2, str1, strlen(str1));
-printf(str2);
-return 0;
 }
