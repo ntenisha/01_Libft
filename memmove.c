@@ -22,7 +22,6 @@ void  *ft_memmove(void* dest, const void *src, size_t count)
 	if (!de && !sr)
 		return (NULL);
 	if  (de < sr)
-	{
 	    while (count > 0)
 	    {
 		    *de = *sr;
@@ -30,11 +29,10 @@ void  *ft_memmove(void* dest, const void *src, size_t count)
 		    *sr++;
 		    *de++;
 	    }
-	}
 	else
 	{
-	    de = de + count;
-	    sr = de + count;
+	    de = de + count - 1;
+	    sr = sr + count - 1;
 	    while (count > 0)
 	    {
 		    *de = *sr;
