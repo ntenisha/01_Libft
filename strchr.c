@@ -1,6 +1,16 @@
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   strchr.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ntenisha <ntenisha@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/06 20:30:30 by ntenisha          #+#    #+#             */
+/*   Updated: 2021/10/06 20:39:09 by ntenisha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 char *ft_strchr(const char *str, int ch)
 {
@@ -16,18 +26,4 @@ char *ft_strchr(const char *str, int ch)
     if (str[i] == ch)
         return ((char *)(str + i));
     return ((void *)0);
-}
-
-
-int main()
-{  
-    char *str = "22321231fdsdf9s";
-    char ch;
-    
-    ch = '9';
-    
-    printf("my  %s  i   \n", ft_strchr(str , ch));
-    printf("or  %s  i   \n", strchr(str , ch));
-    
-    return 0;
 }

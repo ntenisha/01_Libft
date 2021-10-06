@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   strnstr.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ntenisha <ntenisha@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/06 20:31:32 by ntenisha          #+#    #+#             */
+/*   Updated: 2021/10/06 20:39:54 by ntenisha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
     size_t  i;
@@ -16,17 +30,4 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
         i++;
     }
     return ((void *)0);
-}
-
-int	main(void)
-{
-	char	ptr1[] = {"1234567890123456789"};
-	char	ptr2[] = {"01"};
-
-	printf("%s %s\n", ptr1, ptr2);
-	printf("%s \n", ft_strnstr(ptr1, ptr2, 19));
-//	printf("%c \n", strnstr(ptr1, ptr2, 3));
-
-
-	return (0);
 }

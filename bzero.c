@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   bzero.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ntenisha <ntenisha@student.21-schoo>       +#+  +:+       +#+        */
+/*   By: ntenisha <ntenisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 19:20:52 by ntenisha          #+#    #+#             */
-/*   Updated: 2021/10/04 19:21:19 by ntenisha         ###   ########.fr       */
+/*   Updated: 2021/10/06 20:30:13 by ntenisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	bzero(void *s, size_t num)
+void	ft_bzero(void *s, size_t num)
 {
 	unsigned char	*ptr;
 
@@ -21,6 +21,6 @@ void	bzero(void *s, size_t num)
 	{
 		*ptr = '\0';
 		num--;
-		*ptr++;
+		ptr++;
 	}
 }

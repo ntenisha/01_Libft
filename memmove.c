@@ -26,8 +26,8 @@ void  *ft_memmove(void* dest, const void *src, size_t count)
 	    {
 		    *de = *sr;
 		    count--;
-		    *sr++;
-		    *de++;
+		    sr++;
+		    de++;
 	    }
 	else
 	{
@@ -37,8 +37,8 @@ void  *ft_memmove(void* dest, const void *src, size_t count)
 	    {
 		    *de = *sr;
 		    count--;
-		    *sr--;
-		    *de--;
+		    sr--;
+		    de--;
 	    }
 	}
 	return (dest);
