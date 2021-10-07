@@ -3,43 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   memmove.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ntenisha <ntenisha@student.21-schoo>       +#+  +:+       +#+        */
+/*   By: ntenisha <ntenisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 19:25:36 by ntenisha          #+#    #+#             */
-/*   Updated: 2021/10/04 19:25:38 by ntenisha         ###   ########.fr       */
+/*   Updated: 2021/10/07 22:20:42 by ntenisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void  *ft_memmove(void* dest, const void *src, size_t count)
+void	*ft_memmove(void *dest, const void *src, size_t count)
 {
-	unsigned char *de;
-	unsigned char *sr;
-	
+	unsigned char	*de;
+	unsigned char	*sr;
+
 	de = (unsigned char *)dest;
 	sr = (unsigned char *)src;
 	if (!de && !sr)
 		return (NULL);
-	if  (de < sr)
-	    while (count > 0)
-	    {
-		    *de = *sr;
-		    count--;
-		    sr++;
-		    de++;
-	    }
+	if (de < sr)
+		while (count > 0)
+		{
+			*de = *sr;
+			count--;
+			sr++;
+			de++;
+		}
 	else
 	{
-	    de = de + count - 1;
-	    sr = sr + count - 1;
-	    while (count > 0)
-	    {
-		    *de = *sr;
-		    count--;
-		    sr--;
-		    de--;
-	    }
+		de = de + count - 1;
+		sr = sr + count - 1;
+		while (count > 0)
+		{
+			*de = *sr;
+			count--;
+			sr--;
+			de--;
+		}
 	}
 	return (dest);
 }

@@ -1,7 +1,21 @@
-int ft_atoi(char *str)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   atoi.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ntenisha <ntenisha@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/07 18:45:39 by ntenisha          #+#    #+#             */
+/*   Updated: 2021/10/07 22:13:51 by ntenisha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int	ft_atoi(const char *str)
 {
-	int minus;
-	int value;
+	int	minus;
+	int	value;
 
 	minus = 1;
 	value = 0;

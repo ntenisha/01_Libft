@@ -1,80 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlcpy(проверить).c                      :+:      :+:    :+:   */
+/*   strcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ntenisha <ntenisha@student.21-schoo>       +#+  +:+       +#+        */
+/*   By: ntenisha <ntenisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/06 19:08:30 by ntenisha          #+#    #+#             */
-/*   Updated: 2021/10/06 19:08:34 by ntenisha         ###   ########.fr       */
+/*   Created: 2021/10/07 18:56:46 by ntenisha          #+#    #+#             */
+/*   Updated: 2021/10/07 22:22:53 by ntenisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcpy (char *dst, const char *src, size_t size)
-{
-    size_t  i;
-    
-    i = 0;
-    if (!src)
-        return (0);
-    if (size > 0)
-    {
-        while (src[i] && i < (size - 1))
-        {
-            dst[i] = src[i];
-            i++;
-        }
-        dst[i] = '\0';
-    }
-    while (src[i])
-        i++;
-    return (i);
-}
-
-size_t	ft_strlcpy3(char *dst, const char *src, size_t dstsize)
+size_t	ft_strcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
+	i = 0;
 	if (!src)
 		return (0);
-	i = 0;
-	if (0 < dstsize)
+	if (size > 0)
 	{
-		while (src[i] && i < (dstsize - 1))
+		while (src[i] && i < (size - 1))
 		{
 			dst[i] = src[i];
 			i++;
 		}
-		dst[i] = 0;
+		dst[i] = '\0';
 	}
 	while (src[i])
 		i++;
 	return (i);
-}
-
-
-#include <string.h>
-#include <stdio.h>                       /* для printf() */
-
-char  buf[10];                      // буфер размером меньше строки
-
-int main()
-{  char   *str = "образец строки";
-   size_t  sz;
-
-   buf[0] = '\0';                   // избыточная инициализация для отладочной печати
-
-//   printf("строка: \"%s\"\n\n", str);
-//   printf("буфер перед копированием: \"%s\"\n", buf);
-
-   sz = strlcpy(buf, str, sizeof(buf));    
-//   if (sz >= sizeof(buf))           // пример определения усечения строки      
-//      printf("обнаружено усечение строки с %d до %d символов !\n", sz, sizeof(buf)-1);
-
-//   printf("буфер после копирования:  \"%s\"\n", buf);
-    printf("буфер после копирования:  %ld \n", sz);
-
-   return 0;
 }

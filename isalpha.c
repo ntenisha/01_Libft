@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   isalpha.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ntenisha <ntenisha@student.21-schoo>       +#+  +:+       +#+        */
+/*   By: ntenisha <ntenisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 19:22:23 by ntenisha          #+#    #+#             */
-/*   Updated: 2021/10/04 19:22:38 by ntenisha         ###   ########.fr       */
+/*   Updated: 2021/10/07 21:21:56 by ntenisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a') && (c <= 'z'))
 		return (1);

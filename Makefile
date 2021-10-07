@@ -1,43 +1,40 @@
-SRCS_F	= memset bzero memcpy memmove memchr strlen isalpha isdigit isalnum \
-				isascii isprint toupper tolower strchr strrchr strncmp strlcat strnstr
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ntenisha <ntenisha@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/10/07 21:05:34 by ntenisha          #+#    #+#              #
+#    Updated: 2021/10/07 21:07:09 by ntenisha         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-SRCS	= $(addprefix $(SRCS_D), $(SRCS_F))
-HEADER	= -I ./includes/ft.h
+NAME = libft.a
 
-OBJS	= $(SRCS:.c=.o)
+LIST =	memset bzero memcpy memmove memchr memcmp strlen isalpha isdigit isalnum \
+		isascii isprint toupper tolower strchr strrchr strncmp strlcpy strlcat strnstr \
+		atoi calloc strdup \
 
-NAME	= libft.a
+SRCS = $(addsuffix .c, $(LIST))
+OBJS = $(addsuffix .o, $(LIST))
 
-CC		= gcc
-RM		= rm -f
-ARRC	= ar rc
-RUNL	= runlib
+FLAGS = -Wall -Werror -Wextra
 
-CFLAGS	= -Wall -Werror -Wextra -c
+all : $(NAME)
 
-all:	$(NAME)
+$(NAME) : $(OBJS) libft.h
+	ar rcs $(NAME) $?
 
-.c.o:
-	$(CC) $(CFLAGS) -c $(HEADER) $< -o $(<:.c=.o)
+.c.o: $(SRCS)
+	gcc $(FLAGS) -c -o $@ $<
 
-$(NAME):	$(OBJS)
-	$(ARRC) $(NAME) $(OBJS)
+clean: 
+	@rm -f $(OBJS)
 
-runlib:
-		
-	$(RUNL) $(NAME)
-
-
-$(info $(OBJS))
-
-all:	$(NAME)
-
-clean:
-	rm $(OBJS)
-
-fclean:	clean
-	rm $(NAME)
+fclean: 
+	@rm -f $(NAME)
 
 re: fclean all
 
-.PHONY:	all	clean	fclean	re
+.PHONY: all clean fclean re

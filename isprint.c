@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   isprint.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ntenisha <ntenisha@student.21-schoo>       +#+  +:+       +#+        */
+/*   By: ntenisha <ntenisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 19:23:41 by ntenisha          #+#    #+#             */
-/*   Updated: 2021/10/04 19:23:56 by ntenisha         ###   ########.fr       */
+/*   Updated: 2021/10/07 21:23:34 by ntenisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(char c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);
