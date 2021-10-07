@@ -13,8 +13,8 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <unistd.h>
 # include <string.h>
+# include <stdlib.h>
 
 void	ft_bzero(void *s, size_t num);
 int	    ft_isalnum(char c);
