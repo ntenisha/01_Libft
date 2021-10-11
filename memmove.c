@@ -22,24 +22,14 @@ void	*ft_memmove(void *dest, const void *src, size_t count)
 	if (!de && !sr)
 		return (NULL);
 	if (de < sr)
-		while (count > 0)
-		{
-			*de = *sr;
-			count--;
-			sr++;
-			de++;
-		}
+		while (count--)
+			*de++ = *sr++;
 	else
 	{
 		de = de + count - 1;
 		sr = sr + count - 1;
-		while (count > 0)
-		{
-			*de = *sr;
-			count--;
-			sr--;
-			de--;
-		}
+		while (count--)
+			*de-- = *sr--;
 	}
 	return (dest);
 }
