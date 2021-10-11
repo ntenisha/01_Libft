@@ -26,7 +26,6 @@ char *ft_substr2(char const *s, unsigned int start, size_t len)
     return (str);
 }
 
-
 int main(void)
 {
 	char *s = ft_substr("tripouille", 0, 42000);
