@@ -8,7 +8,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char *ft_substr2(char const *s, unsigned int start, size_t len)
 {
     size_t	i;
 	char	*str;
@@ -16,10 +16,10 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	str = (char*)malloc(sizeof(*s) * (len + 1));
 	if (!str)
 		return (NULL);
-	i = start;
+	i = 0;
     while (str [i] && i < len)
     {
-		str[i] = s[i];
+		str[i] = s[i + start];
 		i++;
     }
     str[i] = '\0';
