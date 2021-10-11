@@ -6,7 +6,7 @@
 /*   By: ntenisha <ntenisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 19:29:52 by ntenisha          #+#    #+#             */
-/*   Updated: 2021/10/07 22:17:03 by ntenisha         ###   ########.fr       */
+/*   Updated: 2021/10/11 19:58:34 by ntenisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,8 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *buf1, const void *buf2, size_t count);
 char	*ft_strdup(const char *src);
 void	*ft_calloc(size_t num, size_t size);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strcpy(char *dst, const char *src);
 
 #endif

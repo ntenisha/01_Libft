@@ -6,15 +6,14 @@
 #    By: ntenisha <ntenisha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/07 21:05:34 by ntenisha          #+#    #+#              #
-#    Updated: 2021/10/07 21:07:09 by ntenisha         ###   ########.fr        #
+#    Updated: 2021/10/11 19:38:16 by ntenisha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-LIST =	memset bzero memcpy memmove memchr memcmp strlen isalpha isdigit isalnum \
-		isascii isprint toupper tolower strchr strrchr strncmp strlcpy strlcat strnstr \
-		atoi calloc strdup \
+LIST =	atoi	bzero	calloc	isalnum	isalpha	isascii	isdigit	isprint	memchr	\
+memcmp	memcpy	memmove	memset	strchr	strcpy	strdup	strlcat	strlcpy	strlen	strncmp	strnstr	strrchr	tolower	toupper
 
 SRCS = $(addsuffix .c, $(LIST))
 OBJS = $(addsuffix .o, $(LIST))
@@ -29,10 +28,10 @@ $(NAME) : $(OBJS) libft.h
 .c.o: $(SRCS)
 	gcc $(FLAGS) -c -o $@ $<
 
-clean: 
+clean:
 	@rm -f $(OBJS)
 
-fclean: 
+fclean:
 	@rm -f $(NAME)
 
 re: fclean all
