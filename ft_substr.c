@@ -5,69 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ntenisha <ntenisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 19:25:20 by ntenisha          #+#    #+#             */
-/*   Updated: 2021/10/11 19:37:30 by ntenisha         ###   ########.fr       */
+/*   Created: 2021/10/18 20:44:58 by ntenisha          #+#    #+#             */
+/*   Updated: 2021/10/18 20:48:39 by ntenisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-# include <string.h>
-# include <stdlib.h>
-# include <stdio.h>
-
-size_t	ft_strlen(const char *str)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char *ft_substr2(char const *s, unsigned int start, size_t len)
-{
-	size_t	i;
+	size_t	len_s1;
 	char	*str;
 
-	str = (char*)malloc(sizeof(*s) * (len + 1));
+	len_s1 = ft_strlen(s);
+	if (len_s1 < (start + len))
+		len = len_s1 - start;
+	if (len_s1 < start)
+		len = 0;
+	str = (char *) malloc (sizeof (*s) * (len + 1));
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (str [i] && i < len)
+	while (s[i] && i < len)
 	{
 		str[i] = s[i + start];
 		i++;
 	}
 	str[i] = '\0';
 	return (str);
-}
-
-int main(void)
-{
-	char *s = ft_substr("tripouille", 0, 42000);
-	printf("%s \n", s);
-
-	s = ft_substr("tripouille", 1, 1);
-	printf("%s \n", s);
-	s = ft_substr("tripouille", 100, 1);
-	printf("%s \n", s);
-
-	char * str = strdup("1");
-	s = ft_substr(str, 42, 42000000);
-	printf("%s \n", s);
-
-	str = strdup("0123456789");
-	s = ft_substr(str, 9, 10);
-	printf("%s \n", s);
-
-	s = ft_substr("42", 0, 0);
-	printf("%s \n", s);
-
-	str = strdup("0123456789");
-	s = ft_substr(str, 1, 5);
-	printf("%s \n", s);
-
-	return (0);
 }
