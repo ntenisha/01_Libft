@@ -6,14 +6,15 @@
 #    By: ntenisha <ntenisha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/07 21:05:34 by ntenisha          #+#    #+#              #
-#    Updated: 2021/10/18 18:46:42 by ntenisha         ###   ########.fr        #
+#    Updated: 2021/10/22 17:43:52 by ntenisha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-LIST =	atoi	bzero	calloc	isalnum	isalpha	isascii	isdigit	isprint	memchr	\
-memcmp	memcpy	memmove	memset	strchr	strcpy	strdup	strlcat	strlcpy	strlen	strncmp	strnstr	strrchr	tolower	toupper ft_strjoin ft_substr
+LIST =	atoi bzero calloc ft_putchar_fd ft_putstr_fd ft_striteri ft_strjoin ft_strtrim ft_substr isalnum isalpha \
+isascii isdigit isprint memchr memcmp memcpy memmove memset strchr strcpy strdup strlcat strlcpy strlen strncmp \
+strnstr strrchr tolower toupper
 
 SRCS = $(addsuffix .c, $(LIST))
 OBJS = $(addsuffix .o, $(LIST))
