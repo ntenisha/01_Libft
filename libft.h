@@ -6,7 +6,7 @@
 /*   By: ntenisha <ntenisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 19:29:52 by ntenisha          #+#    #+#             */
-/*   Updated: 2021/10/18 18:45:45 by ntenisha         ###   ########.fr       */
+/*   Updated: 2021/10/24 20:25:29 by ntenisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strcpy(char *dst, const char *src);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
+char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif
