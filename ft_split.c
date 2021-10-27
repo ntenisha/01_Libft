@@ -6,13 +6,13 @@
 /*   By: ntenisha <ntenisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 20:59:41 by ntenisha          #+#    #+#             */
-/*   Updated: 2021/10/26 22:10:01 by ntenisha         ###   ########.fr       */
+/*   Updated: 2021/10/27 23:24:53 by ntenisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	kol_slov(char const *s, char c)
+static	int	ft_kol_slov(char const *s, char c)
 {
 	int	i;
 	int	num;
@@ -25,10 +25,35 @@ static	int	kol_slov(char const *s, char c)
 			i++;
 		while (s[i] && s[i] != c)
 			i++;
-		if(s[i - 1] !=c)
+		if (s[i - 1] != c)
 			num++;
 	}
 	return (num);
+}
+
+static	char	**ft_write_words(char **arr, char const *str, char c)
+{
+	int	i;
+	int	j;
+	int	start;
+
+	i = 0;
+	j = 0;
+	while (str[i])
+	{
+		while (str[i] && str[i] == c)
+			i++;
+		start = i;
+		while (str[i] && str[i] != c)
+			i++;
+		if (start < i)
+		{
+			arr[j] = ft_substr(&str[start], 0, i - start);
+			j++;
+		}
+	}
+	arr[j] = NULL;
+	return (arr);
 }
 
 /*
@@ -52,22 +77,15 @@ char	**ft_split(char const *s, char c)
 	int		num_w;
 
 	if (!s || !c)
-		return (NULL);
-	num_w = kol_slov(s,c);
-	str = (char **) malloc (sizeof (*s) * (num_w + 1));
+	{
+		str = (char **) malloc (sizeof (char *));
+		str[0] = NULL;
+		return (str);
+	}
+	num_w = ft_kol_slov(s, c);
+	str = (char **) malloc (sizeof (char *) * (num_w + 1));
 	if (!str)
 		return (NULL);
-
-
-
-	return(str);
-}
-
-#include <stdio.h>
-int main(void)
-{
-	char *s = "ZZZZaaaaaaaaaaZZZZaaaaaaaaZZZZ";
-	char c = 'Z';
-	printf ("%d \n" , kol_slov(s,c));
-	return (0);
+	str = ft_write_words(str, s, c);
+	return (str);
 }
