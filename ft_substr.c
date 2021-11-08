@@ -6,12 +6,21 @@
 /*   By: ntenisha <ntenisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 20:44:58 by ntenisha          #+#    #+#             */
-/*   Updated: 2021/10/22 18:58:00 by ntenisha         ###   ########.fr       */
+/*   Updated: 2021/11/08 20:12:39 by ntenisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+** 		Parameters
+** #1.  The string from which to create the substring.
+** #2.  The start index of the substring in the string
+** ’s’.
+** #3.  The maximum length of the substring.
+** 		Return value
+** The substring.  NULL if the allocation fails.
+*/
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;

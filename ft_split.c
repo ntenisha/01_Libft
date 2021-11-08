@@ -6,11 +6,19 @@
 /*   By: ntenisha <ntenisha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 20:59:41 by ntenisha          #+#    #+#             */
-/*   Updated: 2021/10/27 23:24:53 by ntenisha         ###   ########.fr       */
+/*   Updated: 2021/11/08 21:25:16 by ntenisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+
+#include <stdio.h>
+#include <unistd.h>
+
+
+
+
 
 static	int	ft_kol_slov(char const *s, char c)
 {
@@ -83,9 +91,47 @@ char	**ft_split(char const *s, char c)
 		return (str);
 	}
 	num_w = ft_kol_slov(s, c);
+printf("\n kol slov %d \n", num_w);
 	str = (char **) malloc (sizeof (char *) * (num_w + 1));
 	if (!str)
 		return (NULL);
 	str = ft_write_words(str, s, c);
 	return (str);
+}
+
+#include <stdio.h>
+#include <unistd.h>
+
+void	ft_print_array2(char **array)
+{
+	int		i;
+
+	i = 0;
+	while (array[i])
+	{
+		printf("%s \n" , array[i]);
+		i++;
+	}
+}
+
+int main(void)
+{
+	printf("checking split with a string containing only delimiters ");
+	char **splited;
+	splited = ft_split("    ", ' ');
+ft_print_array2(splited);
+	printf("\nchecking split with empty string ");
+	splited = ft_split("", ' ');
+ft_print_array2(splited);
+	printf("\nchecking split with string and \\0 as delimiter ");
+	splited = ft_split("Hello, world!", '\0');
+ft_print_array2(splited);
+	printf("\nchecking split with empty string and \\0 as delimiter ");
+	splited = ft_split("", '\0');
+ft_print_array2(splited);
+
+	printf("\n sei4as poyavitsya \n");
+	splited = ft_split("1112211", '2');
+ft_print_array2(splited);
+	return(0);
 }
