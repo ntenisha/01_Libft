@@ -1,3 +1,21 @@
+void	ft_strdel(char **as)
+{
+	if (as && *as)
+	{
+		free(*as);
+		*as = NULL;
+	}
+}
+
+void	*ft_memalloc(size_t size)
+{
+	void *ptr;
+
+	if ((ptr = malloc(size)))
+		ft_bzero(ptr, size);
+	return (ptr);
+}
+
 static size_t	ft_count_words(char const *s, char c)
 {
 	size_t words;
